@@ -31,10 +31,10 @@ const otpSchema = new mongoose.Schema({
 const OTP = mongoose.model('otps', otpSchema);
 
 const transporter = nodemailer.createTransport({
-  service: 'zohomail', 
+  service: '', 
   auth: {
-    user: 'zenfsdcm@zohomail.in',
-    pass: 'zencm@2023',
+    user: '',
+    pass: '',
   },
 });
 
@@ -57,7 +57,7 @@ app.post('/api/generate-otp', async (req, res) => {
     }
 
     const mailOptions = {
-      from: 'cmgen397@gmail.com',
+      from: '',
       to: identifier,
       subject: 'Your OTP',
       text: `Your OTP is: ${otp}`,
